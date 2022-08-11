@@ -2,15 +2,10 @@ name: setup
 
 on: push
 jobs:
-  # build – произвольно выбранное имя задания
-  # их может быть больше одного
   build:
-    # операционная система для работы воркфлоу
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      # run – произвольная bash-команда
-      # ls -la выведет содержимое текущего репозитория
       - run: make setup
       - run: make test
       - run: make lint
